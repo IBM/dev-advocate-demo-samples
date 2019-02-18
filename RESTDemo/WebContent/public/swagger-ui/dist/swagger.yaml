@@ -1,0 +1,32 @@
+swagger: '3.9.0'
+info:
+  description: REST Demo
+  version: 1.0.0
+  title: REST Demo
+basePath: "/RESTDemo/rest/v1"
+schemes:
+  - http
+produces:
+  - application/json
+tags:
+- name: "REST Messaging"
+  description: "REST Messaging"
+paths:
+  /message/{message}:
+    get:
+      tags:
+      - "message"
+      summary: "send a message and have it replied back to you"
+      description: ""
+      operationId: "send message"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "message"
+        in: "path"
+        description: "message to return"
+        required: true
+        type: "string"
+      responses:
+        '200':
+          description: Successful response
